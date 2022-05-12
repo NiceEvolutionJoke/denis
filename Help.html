@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+   <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+   <link rel="stylesheet" href="/css/style.css">
+   <title>Compas</title>
+</head>
+
+<body>
+
+   <div class="wrapper">
+<!--header-->
+<header class="header">
+    <div class="_container">
+        <div class="header__block">
+            <div class="header__content">
+                <a href="/index.html" class="header__logo"><img src="/img/header/compas.svg" alt=""></a>
+                <ul class="header__list">
+                    <li><a href="/Help.html" class="header__link">Поддержка</a></li>
+                    <li><a href="/Rates.html" class="header__link">Тарифы</a></li>
+                    <li><a href="/Contacts.html" class="header__link">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="header__button">
+                <a href="">Вход</a>
+            </div>
+            <div class="header__burger">
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+</header><main class="main">
+    <section class="showHeader">
+
+    </section>
+    <section class="help">
+        <div class="_container">
+            <div class="help__block">
+                <div class="help__title title">Поддержка</div>
+                <div class="help__content">
+                    <div class="tabs__nav">
+                        <div class="help-links__titleglav">Адрес заборов</div>
+                        <div class="help-links__title">1. Общие</div>
+                        <button class="tabs__btn tabs__btn_active">Создание / Изменение нескольких заявок</button>
+                        <button class="tabs__btn">Создание/Изменение одной</button>
+                        <button class="tabs__btn">Список заявок</button>
+                        <button class="tabs__btn">Удаления заявок</button>
+                        <div class="help-links__title">2. Аккаунт</div>
+                        <button class="tabs__btn">Создание/Изменение клиента</button>
+                        <button class="tabs__btn">Список клиентов</button>
+                        <button class="tabs__btn">Список обновленных адресов клиентов</button>
+                        <div class="help-links__title">3. Маршруты</div>
+                        <button class="tabs__btn">Открепление транспорта</button>
+                        <button class="tabs__btn">Прикрепление водителя к складу</button>
+                        <button class="tabs__btn">Создание/Изменение водителя</button>
+                        <button class="tabs__btn">Список водителей</button>
+                        <button class="tabs__btn">Удаление водителя</button>
+                        <button class="tabs__btn">4. Водители</button>
+                        <button class="tabs__btn">5. Интеграция с CMS</button>
+                    </div>
+                    <div class="tabs__content">
+                        <div class="tabs__pane ">
+                            <div class="help-links__titleglav">Apliction - Создание / Изменение нескольких заявок</div>
+                            <div class="help-tab__body help-tap">
+                                <div class="help-tap__title">Apliction - Создание / Изменение нескольких заявок</div>
+                                <div class="help-tap__text">POST запрос на создание нескольких заявок. Для этого вам
+                                    нужны как минимум api ключ, клиент и сами заявки.</div>
+                                <div class="help-tap__content">https://app.relog.kz/api/v2/applications</div>
+                                <div class="help-tap__text">Пример запроса.</div>
+                                <div class="help-tap__content">
+                                    curl -X POST \ <br>
+                                    https://app.relog.kz/api/v2/applications \<br>
+                                    -H <span>'content-type: application/json' \</span><br>
+                                    -d <span>'{</span><br>
+                                    <span>"api_key": "xxxxxxxxxxxxxx"</span>,<br>
+                                    <span>"options"</span>: {<br>
+                                    <span>"multi"</span>: <span3>true</span3><br>
+                                    },<br>
+                                    <span>"data"</span>: [{<br>
+                                    <span>"client"</span>: {<br>
+                                    <span>"phone"</span>: <span>"7702xxxxxxx"</span>,<br>
+                                    <span>"allPhones"</span>:
+                                    [<span>"7702xxxxxx1"</span>,<span>"7702xxxxxx2"</span>],<br>
+                                    <span>"name"</span>: <span>"clientName"</span>,<br>
+                                    <span>"email"</span>: <span>"email@example.com"</span>,<br>
+                                    <span>"description"</span>: <span>"Some description"</span><br>
+                                    },<br>
+                                    <span>"application"</span>: {<br>
+                                    <span>"externalId"</span>: <span2>1234</span2>,<br>
+                                    <span>"additionalDetails"</span>: <span>"some details"</span>,<br>
+                                    <span>"details"</span>: <span>"other details"</span>,<br>
+                                    <span>"price"</span>: <span2>0</span2>,<br>
+                                    <span>"planDeliveryPeriod"</span>: {<br>
+                                    <span>"startDate"</span>: <span2>1492590418399</span2>,<br>
+                                    <span>"endDate"</span>: <span2>1492590418399</span2><br>
+                                    }<br>
+                                    ]<br>
+                                    }]<br>
+                                    }'
+                                </div>
+                                <div class="help-tap__text">Header</div>
+                                <div class="help-tap__table">
+                                    <table>
+                                        <tr>
+                                            <td class="td1">Дата</td>
+                                            <td class="td2">Пробег, км</td>
+                                            <td class="td3">Доп расходы, руб</td>
+                                            <td class="td4">Комментарий</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td>12389</td>
+                                            <td>Покупка колодок и замена их</td>
+                                        </tr>
+                                        <tr>
+                                            <td>26.12.16</td>
+                                            <td>82600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>25.12.16</td>
+                                            <td>81830 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>24.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>23.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="help-tap__text">Тело запроса, основные данные</div>
+                                <div class="help-tap__table">
+                                    <table>
+                                        <tr>
+                                            <td class="td1">Дата</td>
+                                            <td class="td2">Пробег, км</td>
+                                            <td class="td3">Доп расходы, руб</td>
+                                            <td class="td4">Комментарий</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td>12389</td>
+                                            <td>Покупка колодок и замена их</td>
+                                        </tr>
+                                        <tr>
+                                            <td>26.12.16</td>
+                                            <td>82600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>25.12.16</td>
+                                            <td>81830 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>24.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>23.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs__pane tabs__pane_show">
+                            <div class="help-links__titleglav">Apliction - Создание / Изменение нескольких заявок</div>
+                            <div class="help-tab__body help-tap">
+                                <div class="help-tap__title">Apliction - Создание / Изменение нескольких заявок</div>
+                                <div class="help-tap__text">POST запрос на создание нескольких заявок. Для этого вам
+                                    нужны как минимум api ключ, клиент и сами заявки.</div>
+                                <div class="help-tap__content">https://app.relog.kz/api/v2/applications</div>
+                                <div class="help-tap__text">Пример запроса.</div>
+                                <div class="help-tap__content">
+                                    curl -X POST \ <br>
+                                    https://app.relog.kz/api/v2/applications \<br>
+                                    -H <span>'content-type: application/json' \</span><br>
+                                    -d <span>'{</span><br>
+                                    <span>"api_key": "xxxxxxxxxxxxxx"</span>,<br>
+                                    <span>"options"</span>: {<br>
+                                    <span>"multi"</span>: <span3>true</span3><br>
+                                    },<br>
+                                    <span>"data"</span>: [{<br>
+                                    <span>"client"</span>: {<br>
+                                    <span>"phone"</span>: <span>"7702xxxxxxx"</span>,<br>
+                                    <span>"allPhones"</span>:
+                                    [<span>"7702xxxxxx1"</span>,<span>"7702xxxxxx2"</span>],<br>
+                                    <span>"name"</span>: <span>"clientName"</span>,<br>
+                                    <span>"email"</span>: <span>"email@example.com"</span>,<br>
+                                    <span>"description"</span>: <span>"Some description"</span><br>
+                                    },<br>
+                                    <span>"application"</span>: {<br>
+                                    <span>"externalId"</span>: <span2>1234</span2>,<br>
+                                    <span>"additionalDetails"</span>: <span>"some details"</span>,<br>
+                                    <span>"details"</span>: <span>"other details"</span>,<br>
+                                    <span>"price"</span>: <span2>0</span2>,<br>
+                                    <span>"planDeliveryPeriod"</span>: {<br>
+                                    <span>"startDate"</span>: <span2>1492590418399</span2>,<br>
+                                    <span>"endDate"</span>: <span2>1492590418399</span2><br>
+                                    }<br>
+                                    ]<br>
+                                    }]<br>
+                                    }'
+                                </div>
+                                <div class="help-tap__text">Header</div>
+                                <div class="help-tap__table">
+                                    <table>
+                                        <tr>
+                                            <td class="td1">Дата</td>
+                                            <td class="td2">Пробег, км</td>
+                                            <td class="td3">Доп расходы, руб</td>
+                                            <td class="td4">Комментарий</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td>12389</td>
+                                            <td>Покупка колодок и замена их</td>
+                                        </tr>
+                                        <tr>
+                                            <td>26.12.16</td>
+                                            <td>82600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>25.12.16</td>
+                                            <td>81830 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>24.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>23.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="help-tap__text">Тело запроса, основные данные</div>
+                                <div class="help-tap__table">
+                                    <table>
+                                        <tr>
+                                            <td class="td1">Дата</td>
+                                            <td class="td2">Пробег, км</td>
+                                            <td class="td3">Доп расходы, руб</td>
+                                            <td class="td4">Комментарий</td>
+                                        </tr>
+                                        <tr>
+                                            <td>27.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td>12389</td>
+                                            <td>Покупка колодок и замена их</td>
+                                        </tr>
+                                        <tr>
+                                            <td>26.12.16</td>
+                                            <td>82600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>25.12.16</td>
+                                            <td>81830 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>24.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>23.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.12.16</td>
+                                            <td>83600 <span>(89234)</span></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs__pane" id="content-3">
+                            <div class="help-links__titleglav">Apliction - Создание / Изменение нескольких заявок</div>
+                            Содержимое 3...
+                        </div>
+                        <div class="tabs__pane" id="content-4">
+                            <div class="help-links__titleglav">Apliction - Создание / Изменение нескольких заявок</div>
+                            Содержимое 4...
+                        </div>
+                        <div class="tabs__pane" id="content-5">
+                            Содержимое 5...
+                        </div>
+                        <div class="tabs__pane" id="content-6">
+                            Содержимое 6...
+                        </div>
+                        <div class="tabs__pane" id="content-7">
+                            Содержимое 7...
+                        </div>
+                        <div class="tabs__pane" id="content-8">
+                            Содержимое 8...
+                        </div>
+                        <div class="tabs__pane" id="content-9">
+                            Содержимое 9...
+                        </div>
+                        <div class="tabs__pane" id="content-10">
+                            Содержимое 10...
+                        </div>
+                        <div class="tabs__pane" id="content-11">
+                            Содержимое 11...
+                        </div>
+                        <div class="tabs__pane" id="content-12">
+                            Содержимое 12...
+                        </div>
+                        <div class="tabs__pane" id="content-13">
+                            Содержимое 13...
+                        </div>
+                        <div class="tabs__pane" id="content-14">
+                            Содержимое 14...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                class ItcTabs {
+                    constructor(target, config) {
+                        const defaultConfig = {};
+                        this._config = Object.assign(defaultConfig, config);
+                        this._elTabs = typeof target === 'string' ? document.querySelector(target) : target;
+                        this._elButtons = this._elTabs.querySelectorAll('.tabs__btn');
+                        this._elPanes = this._elTabs.querySelectorAll('.tabs__pane');
+                        this._eventShow = new Event('tab.itc.change');
+                        this._init();
+                        this._events();
+                    }
+                    _init() {
+                        this._elTabs.setAttribute('role', 'tablist');
+                        this._elButtons.forEach((el, index) => {
+                            el.dataset.index = index;
+                            el.setAttribute('role', 'tab');
+                            this._elPanes[index].setAttribute('role', 'tabpanel');
+                        });
+                    }
+                    show(elLinkTarget) {
+                        const elPaneTarget = this._elPanes[elLinkTarget.dataset.index];
+                        const elLinkActive = this._elTabs.querySelector('.tabs__btn_active');
+                        const elPaneShow = this._elTabs.querySelector('.tabs__pane_show');
+                        if (elLinkTarget === elLinkActive) {
+                            return;
+                        }
+                        elLinkActive ? elLinkActive.classList.remove('tabs__btn_active') : null;
+                        elPaneShow ? elPaneShow.classList.remove('tabs__pane_show') : null;
+                        elLinkTarget.classList.add('tabs__btn_active');
+                        elPaneTarget.classList.add('tabs__pane_show');
+                        this._elTabs.dispatchEvent(this._eventShow);
+                        elLinkTarget.focus();
+                    }
+                    showByIndex(index) {
+                        const elLinkTarget = this._elButtons[index];
+                        elLinkTarget ? this.show(elLinkTarget) : null;
+                    };
+                    _events() {
+                        this._elTabs.addEventListener('click', (e) => {
+                            const target = e.target.closest('.tabs__btn');
+                            if (target) {
+                                e.preventDefault();
+                                this.show(target);
+                            }
+                        });
+                    }
+                }
+                new ItcTabs('.help__content');
+            </script>
+        </div>
+    </section>
+</main><footer class="footer">
+    <div class="_container">
+        <div class="footer__block">
+            <div class="footer__body">
+                <ul class="footer__list">
+                    <li><span>Карта сайта</span></li>
+                    <li><a href="/index.html" class="footer__link">Главная страница</a></li>
+                    <li><a href="/Help.html" class="footer__link">Поддержка</a></li>
+                    <li><a href="/Rates.html" class="footer__link">Тарифы</a></li>
+                    <li><a href="" class="footer__link">Вход</a></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <a class="footer__button" href="#">
+                    <img src="/img/footer/russia.png" alt=""> Россия
+                </a>
+                <div class="footer__info">
+                    <div class="header__logo"><img src="/img/header/compas.svg" alt=""></div>
+                    <div class="footer__text">
+                        <ul class="footer__list">
+                            <li><span>Контактная информация</span></li>
+                            <li>ООО «Экспер Маршрута»</li>
+                            <li>E-mail: info@opt6.ru</li>
+                            <li>Адрес: г. Москва, 2-й южнопортовый <br> проезд, 10 стр 96</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+   </div>
+   <script src="/js/swiper-bundle.min.js"></script>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
