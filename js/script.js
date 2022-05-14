@@ -5,6 +5,8 @@ document.querySelector('.header__burger').addEventListener('click', function () 
     document.querySelector('body').classList.toggle('lock');
 });
 
+$(".phone_mask").mask("+7(999)999-99-99");
+
 function fun1() {
     var chbox;
     chbox = document.getElementById('pasport');
